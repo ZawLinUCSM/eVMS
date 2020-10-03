@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>CMS_API</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\Entities\Entities.csproj" />
+    <ProjectReference Include="..\..\shared\Utilities\Utilities.csproj" />
+    <ProjectReference Include="..\CMS.Services\CMS.Services.csproj" />
+  </ItemGroup>
+
+
+</Project>
