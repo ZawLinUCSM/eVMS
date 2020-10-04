@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PromoCode_MS;
 using Utilities;
 
 namespace eStoreAPI.Controllers
@@ -17,9 +18,9 @@ namespace eStoreAPI.Controllers
 
         public dynamic Get()
         {
+           
             TokenProviderMiddleware tokenProvider = new TokenProviderMiddleware();
-
-            return tokenProvider.GenerateToken();
+            return  tokenProvider.GenerateToken();
         }
     }
 }

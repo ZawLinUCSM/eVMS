@@ -53,7 +53,7 @@ namespace eStore.Repositories
         {
              this.RepositoryContext.Set<T>().Add(entity);
             if (flush) await this.SaveAsync();
-        }
+        }      
 
         public async Task UpdateAsync(T entity, bool flush = true)
         {

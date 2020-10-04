@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\shared\PCMS\PCMS.csproj" />
     <ProjectReference Include="..\eStore.Repositories\eStore.Repositories.csproj" />
   </ItemGroup>
 

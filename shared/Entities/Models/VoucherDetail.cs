@@ -17,7 +17,7 @@ namespace Entities.Models
         [StringLength(20)]
         public string PromoCode { get; set; }
         [Column("QRCode")]
-        public string Qrcode { get; set; }        
+        public string Qrcode { get; set; } // To store only Base64 string to the database instead image  
         public bool PromoCodeStatus { get; set; } // True is used & False is unused code
         [ForeignKey(nameof(VoucherGuid))]
         [InverseProperty(nameof(Voucher.VoucherDetail))]

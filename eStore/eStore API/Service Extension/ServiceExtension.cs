@@ -19,8 +19,7 @@ namespace eStoreAPI.Service_Extension
         {
             services.AddScoped<IEVoucherService, EVoucherSerivce>();
             services.AddScoped<ICartService, CartService>();
-            services.AddScoped<IPaymentService, PaymentService>();
-            services.AddScoped<IVoucherDetailService, VoucherDetailService>();
+            services.AddScoped<IPaymentService, PaymentService>();           
         }
 
         public static void ConfigureRepositories(this IServiceCollection services)
