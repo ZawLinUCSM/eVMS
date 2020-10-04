@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entities.Models;
 using eStore.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Utilities;
 
@@ -10,7 +12,8 @@ namespace eStoreAPI.Controllers
 {
     [Route("estoreapi/payment")]
     [ApiController]
-    public class PaymentController : ControllerBase
+    [Authorize]
+    public class PaymentController : BaseController
     {
         readonly IPaymentService _paymentService;
         public PaymentController(IPaymentService paymentService)
@@ -43,12 +46,21 @@ namespace eStoreAPI.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("")]
-        public string DoPayment(string promocode)
+        public async Task<dynamic> DoPayment(Voucher voucher)
         {
             // Confirm first
             // Generate Promo Codes
             // Then save to DB
-            return "";
+            try
+            {
+                var isSuccess = await _paymentService.DoPayment(voucher);
+                var message = isSuccess ? "Payment is successfully done" : "Transaction Time out";
+                return Ok(ResponseHelper.SuccessResponse(message));
+            }
+            catch (Exception ex)
+            {
+                return Ok(ResponseHelper.FailRespose(ex.Message));
+            }           
         }
     }
 }

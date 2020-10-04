@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using eStore.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Utilities;
 
@@ -8,7 +9,8 @@ namespace eStoreAPI.Controllers
 {
     [Route("estoreapi/cart")]
     [ApiController]
-    public class CartController : ControllerBase
+    [Authorize]
+    public class CartController : BaseController
     {
         readonly ICartService _cartService;
         public CartController(ICartService cartService)

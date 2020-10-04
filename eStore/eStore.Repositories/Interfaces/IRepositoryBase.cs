@@ -14,7 +14,7 @@ namespace eStore.Repositories.Interfaces
         void Delete(T entity, bool flush = true);
         void Save();
 
-        Task CreateAsync(T entity, bool flush = true);
+        Task CreateAsync(T entity, bool flush = true);      
         Task UpdateAsync(T entity, bool flush = true);
         Task DeleteAsync(T entity, bool flush = true);
         Task SaveAsync();

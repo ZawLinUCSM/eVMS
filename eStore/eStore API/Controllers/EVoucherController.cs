@@ -11,7 +11,8 @@ using Utilities;
 namespace eStoreAPI.Controllers
 {
     [Route("estoreapi/evoucher")]
-    [ApiController]    
+    [ApiController]   
+    [Authorize]
     public class EVoucherController : BaseController
     {
         readonly IEVoucherService _eVoucherServices;   
@@ -85,8 +86,7 @@ namespace eStoreAPI.Controllers
         ///  Verify the status of eVoucher
         /// </summary>
         /// <param name="promocode"></param>
-        /// <returns>Return the status of eVoucher</returns>
-        [Authorize]
+        /// <returns>Return the status of eVoucher</returns>       
         [HttpGet]
         [Route("{promocode}/verify")]
         public async Task<dynamic> VerifyeVoucher(string promocode)
