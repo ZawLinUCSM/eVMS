@@ -1,19 +1,25 @@
 # eVMS
 Microservice Architecture with .net Core
 
+# Database Restore
+Create database "eVoucher"
+Run the sql_evoucher
+
 # Step 1
 dotnet restore
 # Step 2
-    1. Run the CMS API
-    2. Generate the token localhost:port/cmsapi/token
-    3. Get the access_token
-    4. Can call the other endpoints by adding Authorization header with Bearer token
+    1. Change the db connection string in appsettings.json
+    2. Run the CMS API
+    3. Generate the token localhost:port/cmsapi/token
+    4. Get the access_token
+    5. Can call the other endpoints by adding Authorization header with Bearer token
 
 # Step 3
-    1. Run the eStore API
-    2. Generate the token localhost:port/estoreapi/token
-    3. Get the access_token
-    4. Can call the other endpoints by adding Authorization header with Bearer token
+    1. Change the db connection string in appsettings.json
+    2. Run the eStore API
+    3. Generate the token localhost:port/estoreapi/token
+    4. Get the access_token
+    5. Can call the other endpoints by adding Authorization header with Bearer token
 # Step 4
     1. Run the eVMS.Web project
     2. Check the eVouchers
