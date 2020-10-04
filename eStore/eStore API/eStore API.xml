@@ -18,7 +18,7 @@
         </member>
         <member name="M:eStoreAPI.Controllers.EVoucherController.GetPurchaseHistories(System.String)">
             <summary>
-             The purchase history list
+             The purchase history list for a customer
             </summary>
             <returns>The list of purchase history for a customer</returns>
         </member>
