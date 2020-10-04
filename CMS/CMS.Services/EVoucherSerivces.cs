@@ -38,5 +38,9 @@ namespace CMS.Services
         {
             return await _evoucherRepository.GetVouchers();
         }
+        public async Task<Voucher> GetVoucherDetail(string voucherGuid)
+        {
+            return await _evoucherRepository.GetVoucherDetail(voucherGuid);
+        }
     }
 }

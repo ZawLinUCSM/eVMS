@@ -116,12 +116,8 @@ namespace Utilities
 
             var response = new
             {
-                data =
-                new
-                {
-                    access_token = encodedJwt,
-                    expires_in = (int)_options.Expiration.TotalSeconds
-                }
+                access_token = encodedJwt,
+                expires_in = (int)_options.Expiration.TotalSeconds
             };
             return response;
         }
@@ -144,7 +140,7 @@ namespace Utilities
                     _tokenData = GetTokenData(tokenS);
 
                     //Regenerate newtoken for not timeout at running
-                    string newToken = "";                   
+                    string newToken = "";
 
                     // check token expired   
                     double expireTime = Convert.ToDouble(_options.Expiration.TotalMinutes);

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS API</name>
+    </assembly>
+    <members>
+        <member name="M:CMS_API.Controllers.EVoucherController.Get">
+            <summary>
+            List of active eVouchers
+            </summary>        
+            <returns>The list of active eVouchers.</returns>
+        </member>
+        <member name="M:CMS_API.Controllers.EVoucherController.CreateVoucher(CMS.Repositories.Models.Voucher)">
+            <summary>
+            Create an eVoucher
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:CMS_API.Controllers.EVoucherController.UpdateVoucher(CMS.Repositories.Models.Voucher)">
+            <summary>
+            Update an eVoucher.
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:CMS_API.Controllers.EVoucherController.SetInactive(System.String)">
+            <summary>
+            Deactivate an eVoucher.
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:CMS_API.Controllers.EVoucherController.DeactivateVoucher(CMS.Repositories.Models.Voucher)">
+            <summary>
+            Delete eVoucher
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:CMS_API.Controllers.TokenController.Get">
+            <summary>
+             Get the token to get access to the resource.
+            </summary>
+            <returns>The access token</returns>
+        </member>
+    </members>
+</doc>

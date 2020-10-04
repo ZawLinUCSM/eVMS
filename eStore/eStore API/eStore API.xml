@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>eStore API</name>
+    </assembly>
+    <members>
+        <member name="M:eStoreAPI.Controllers.CartController.GetShoppingCartItem(System.String)">
+            <summary>
+              the items in the shopping cart
+            </summary>       
+            <returns>Return the item in the shopping cart</returns>
+        </member>
+        <member name="M:eStoreAPI.Controllers.EVoucherController.GeteVouchers">
+            <summary>
+             List of  evouchers
+            </summary>
+            <returns>The list of evouchers </returns>
+        </member>
+        <member name="M:eStoreAPI.Controllers.EVoucherController.GetPurchaseHistories(System.String)">
+            <summary>
+             The purchase history list
+            </summary>
+            <returns>The list of purchase history for a customer</returns>
+        </member>
+        <member name="M:eStoreAPI.Controllers.EVoucherController.GetDetails(System.String)">
+            <summary>
+             Return details of eVoucher by guid
+            </summary>
+            <param name="voucherguid"></param>
+            <returns>The details of a eVoucher</returns>
+        </member>
+        <member name="M:eStoreAPI.Controllers.EVoucherController.VerifyeVoucher(System.String)">
+            <summary>
+             Verify the status of eVoucher with promocode
+            </summary>
+            <param name="promocode"></param>
+            <returns> The status of a eVoucher</returns>       
+        </member>
+        <member name="M:eStoreAPI.Controllers.PaymentController.GetPaymentTypes">
+            <summary>
+             Payment Methods
+            </summary>
+            <returns>The list of payment methods</returns>
+        </member>
+        <member name="M:eStoreAPI.Controllers.PaymentController.DoPayment(Entities.Models.Voucher)">
+            <summary>
+             Make a payment
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:eStoreAPI.Controllers.TokenController.Get">
+            <summary>
+             Get the token to get access to the resource.
+            </summary>
+            <returns>The access token</returns>
+        </member>
+    </members>
+</doc>

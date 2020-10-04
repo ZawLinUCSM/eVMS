@@ -56,10 +56,17 @@ namespace CMS.Repositories
         }
         public async Task<IEnumerable<Voucher>> GetVouchers()
         {
-            var query = RepositoryContext.Voucher;
+            var query = RepositoryContext.Voucher.Where(c=>c.Status=="Active");
             return await query.ToListAsync();
         }
 
+        public async Task<Voucher> GetVoucherDetail(string voucherGuid)
+        {
+            var query = RepositoryContext.Voucher
+                .Where(c => c.Guid == voucherGuid)
+                .Include(voucher => voucher.VoucherDetail);
 
+            return await query.FirstOrDefaultAsync();
+        }
     }
 }
