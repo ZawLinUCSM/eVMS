@@ -13,14 +13,19 @@ namespace eStoreAPI.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
-        [HttpGet]
-        [Route("")]
 
-        public dynamic Get()
+        /// <summary>
+        ///  Get the token to get access to the resource.
+        /// </summary>
+        /// <returns>The access token</returns>
+        // Get estoreapi/token
+        [HttpGet]
+        [Route("")]        
+        public IActionResult Get()
         {
-           
             TokenProviderMiddleware tokenProvider = new TokenProviderMiddleware();
-            return  tokenProvider.GenerateToken();
+            var response = tokenProvider.GenerateToken();
+            return Ok(ResponseHelper.SuccessResponse(response));
         }
     }
 }

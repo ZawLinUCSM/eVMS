@@ -22,9 +22,9 @@ namespace eStoreAPI.Controllers
         }
 
         /// <summary>
-        ///  Return evouchers list
+        ///  List of  evouchers
         /// </summary>
-        /// <returns>Return evouchers list</returns>
+        /// <returns>The list of evouchers </returns>
         [HttpGet]
         [Route("")]
         public async Task<dynamic> GeteVouchers()
@@ -42,9 +42,9 @@ namespace eStoreAPI.Controllers
         }      
 
         /// <summary>
-        ///  Return Purchase history list
+        ///  The purchase history list for a customer
         /// </summary>
-        /// <returns>Return Purchase history list</returns>
+        /// <returns>The list of purchase history for a customer</returns>
         [HttpGet]
         [Route("customers/{customerguid}/purchasehistories")]
         public async Task<dynamic> GetPurchaseHistories(string customerguid)
@@ -62,10 +62,10 @@ namespace eStoreAPI.Controllers
         }
 
         /// <summary>
-        ///  Return details of eVoucher by promocode
+        ///  Return details of eVoucher by guid
         /// </summary>
-        /// <param name="promocode"></param>
-        /// <returns>Return details of eVoucher</returns>
+        /// <param name="voucherguid"></param>
+        /// <returns>The details of a eVoucher</returns>
         [HttpGet]
         [Route("{voucherguid}/details")]
         public async Task<dynamic> GetDetails(string voucherguid)
@@ -83,10 +83,10 @@ namespace eStoreAPI.Controllers
         }
 
         /// <summary>
-        ///  Verify the status of eVoucher
+        ///  Verify the status of eVoucher with promocode
         /// </summary>
         /// <param name="promocode"></param>
-        /// <returns>Return the status of eVoucher</returns>       
+        /// <returns> The status of a eVoucher</returns>       
         [HttpGet]
         [Route("{promocode}/verify")]
         public async Task<dynamic> VerifyeVoucher(string promocode)

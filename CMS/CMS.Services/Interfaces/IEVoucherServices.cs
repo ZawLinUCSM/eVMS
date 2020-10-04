@@ -9,6 +9,7 @@ namespace CMS.Services.Interfaces
     public interface IEVoucherServices
     {
         Task<IEnumerable<Voucher>> GetVouchers();
+        Task<Voucher> GetVoucherDetail(string voucherGuid);
         Task<bool> Create(Voucher voucher);
         Task<bool> Update(Voucher voucher);
         Task<bool> Delete(Voucher voucher);

@@ -22,9 +22,9 @@ namespace eStoreAPI.Controllers
         }     
 
         /// <summary>
-        ///  Return Payment Method list
+        ///  Payment Methods
         /// </summary>
-        /// <returns>Return Payment Method list</returns>
+        /// <returns>The list of payment methods</returns>
         [HttpGet]
         [Route("types")]
         public async Task<dynamic> GetPaymentTypes()

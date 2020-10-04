@@ -4,6 +4,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Working Folder\eVMS\eStore\eStore API\eStore API.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\shared\Entities\Entities.csproj" />
     <ProjectReference Include="..\..\shared\Utilities\Utilities.csproj" />

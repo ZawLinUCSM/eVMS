@@ -22,32 +22,27 @@ namespace CMS_API.Controllers
             _eVoucherServices = eVoucherService;
         }
 
+        /// <summary>
+        /// List of active eVouchers
+        /// </summary>        
+        /// <returns>The list of active eVouchers.</returns>
         [HttpGet]
         [Route("")]
-      
-        public string Get()
-        {
-            return "Welcome from CMS API. API is running....";
-        }
-
-        [HttpGet]
-        [Route("list")]       
-        public async Task<dynamic> GetVoucherList()
+        public async Task<dynamic> Get()
         {
             try
             {
-                var vouchers = await _eVoucherServices.GetVouchers();               
+                var vouchers = await _eVoucherServices.GetVouchers();
                 return Ok(ResponseHelper.SuccessResponse(vouchers));
             }
             catch (Exception ex)
             {
                 return Ok(ResponseHelper.FailRespose(ex.Message));
             }
-
         }
 
         /// <summary>
-        /// Create eVoucher
+        /// Create an eVoucher
         /// </summary>        
         /// <returns></returns>
         [HttpPost]
@@ -69,7 +64,7 @@ namespace CMS_API.Controllers
         }
 
         /// <summary>
-        /// Update eVoucher
+        /// Update an eVoucher.
         /// </summary>        
         /// <returns></returns>
         [HttpPut]
@@ -81,6 +76,28 @@ namespace CMS_API.Controllers
 
                 await _eVoucherServices.Update(voucher);
                 return Ok(ResponseHelper.SuccessResponse("Updated successfully"));
+            }
+            catch (Exception ex)
+            {
+                return Ok(ResponseHelper.FailRespose(ex.Message));
+            }
+        }
+
+        /// <summary>
+        /// Deactivate an eVoucher.
+        /// </summary>        
+        /// <returns></returns>
+        [HttpGet]
+        [Route("{voucherguid}/deactivate")]
+        public async Task<dynamic> SetInactive(string voucherGuid)
+        {
+            try
+            {
+                var voucher = await _eVoucherServices.GetVoucherDetail(voucherGuid);
+                if (voucher != null & voucher.Guid != "")
+                    await _eVoucherServices.Delete(voucher);
+                else return Ok(ResponseHelper.SuccessResponse("No voucher found"));
+                return Ok(ResponseHelper.SuccessResponse("Deleted successfully"));
             }
             catch (Exception ex)
             {

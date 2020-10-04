@@ -19,9 +19,10 @@ namespace eStoreAPI.Controllers
         }              
 
         /// <summary>
-        ///  Return the item in the shopping cart
+        ///   the items in the shopping cart
         /// </summary>       
         /// <returns>Return the item in the shopping cart</returns>
+        // GET estoreapi/cart/checkout
         [HttpGet]
         [Route("checkout")]
         public async Task<dynamic> GetShoppingCartItem(string userGuid)
