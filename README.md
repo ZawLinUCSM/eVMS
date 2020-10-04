@@ -2,8 +2,8 @@
 Microservice Architecture with .net Core
 
 # Database Restore
-Create database "eVoucher"
-Run the sql_evoucher
+    1. Create database "eVoucher"
+    2. Run the script file "sql_evoucher"
 
 # Step 1
 dotnet restore
